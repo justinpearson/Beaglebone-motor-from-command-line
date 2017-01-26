@@ -137,6 +137,7 @@ echo "EQEP before: "
 cat $eqep_path/position
 echo "Turning on in 1 sec..."
 sleep 1
+echo "ON"
 echo 1 > run
 sleep .5
 echo "OFF"

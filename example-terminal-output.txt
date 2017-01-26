@@ -1,0 +1,158 @@
+2017-01-26 12:46:16 [root@beaglebone /home/debian/Beaglebone-motor-from-command-line] 
+# ls
+Images	README.md  run-lil-dc-motor.sh
+2017-01-26 12:46:17 [root@beaglebone /home/debian/Beaglebone-motor-from-command-line] 
+# ./run-lil-dc-motor.sh 
+SLOTS is already set to '/sys/devices/bone_capemgr.9/slots', good.
+am33xx_pwm not in /sys/devices/bone_capemgr.9/slots, loading it...
+dmesg before load:
+[   26.845932] libphy: PHY 4a101000.mdio:01 not found
+[   26.851067] net eth0: phy 4a101000.mdio:01 not found on slave 1
+[   26.861710] IPv6: ADDRCONF(NETDEV_UP): eth0: link is not ready
+[   27.249742] net eth0: initializing cpsw version 1.12 (0)
+[   27.252545] net eth0: phy found : id is : 0x7c0f1
+[   27.252570] libphy: PHY 4a101000.mdio:01 not found
+[   27.257694] net eth0: phy 4a101000.mdio:01 not found on slave 1
+[   27.268274] IPv6: ADDRCONF(NETDEV_UP): eth0: link is not ready
+[   29.259849] libphy: 4a101000.mdio:00 - Link is Up - 100/Full
+[   29.259968] IPv6: ADDRCONF(NETDEV_CHANGE): eth0: link becomes ready
+dmesg after load:
+[ 1749.346433] bone-capemgr bone_capemgr.9: slot #7: Requesting part number/version based 'am33xx_pwm-00A0.dtbo
+[ 1749.346481] bone-capemgr bone_capemgr.9: slot #7: Requesting firmware 'am33xx_pwm-00A0.dtbo' for board-name 'Override Board Name', version '00A0'
+[ 1749.346533] bone-capemgr bone_capemgr.9: slot #7: dtbo 'am33xx_pwm-00A0.dtbo' loaded; converting to live tree
+[ 1749.353499] bone-capemgr bone_capemgr.9: slot #7: #8 overlays
+[ 1749.362576] ehrpwm 48300200.ehrpwm: unable to select pin group
+[ 1749.369082] ecap 48300100.ecap: unable to select pin group
+[ 1749.377368] ehrpwm 48302200.ehrpwm: unable to select pin group
+[ 1749.386223] ehrpwm 48304200.ehrpwm: unable to select pin group
+[ 1749.394820] ecap 48304100.ecap: unable to select pin group
+[ 1749.396055] bone-capemgr bone_capemgr.9: slot #7: Applied #8 overlays.
+bone_pwm_P8_34 not in /sys/devices/bone_capemgr.9/slots, loading it...
+dmesg before load:
+[ 1749.346433] bone-capemgr bone_capemgr.9: slot #7: Requesting part number/version based 'am33xx_pwm-00A0.dtbo
+[ 1749.346481] bone-capemgr bone_capemgr.9: slot #7: Requesting firmware 'am33xx_pwm-00A0.dtbo' for board-name 'Override Board Name', version '00A0'
+[ 1749.346533] bone-capemgr bone_capemgr.9: slot #7: dtbo 'am33xx_pwm-00A0.dtbo' loaded; converting to live tree
+[ 1749.353499] bone-capemgr bone_capemgr.9: slot #7: #8 overlays
+[ 1749.362576] ehrpwm 48300200.ehrpwm: unable to select pin group
+[ 1749.369082] ecap 48300100.ecap: unable to select pin group
+[ 1749.377368] ehrpwm 48302200.ehrpwm: unable to select pin group
+[ 1749.386223] ehrpwm 48304200.ehrpwm: unable to select pin group
+[ 1749.394820] ecap 48304100.ecap: unable to select pin group
+[ 1749.396055] bone-capemgr bone_capemgr.9: slot #7: Applied #8 overlays.
+dmesg after load:
+[ 1749.396055] bone-capemgr bone_capemgr.9: slot #7: Applied #8 overlays.
+[ 1749.601617] bone-capemgr bone_capemgr.9: part_number 'bone_pwm_P8_34', version 'N/A'
+[ 1749.601689] bone-capemgr bone_capemgr.9: slot #8: generic override
+[ 1749.601706] bone-capemgr bone_capemgr.9: bone: Using override eeprom data at slot 8
+[ 1749.601722] bone-capemgr bone_capemgr.9: slot #8: 'Override Board Name,00A0,Override Manuf,bone_pwm_P8_34'
+[ 1749.601821] bone-capemgr bone_capemgr.9: slot #8: Requesting part number/version based 'bone_pwm_P8_34-00A0.dtbo
+[ 1749.601837] bone-capemgr bone_capemgr.9: slot #8: Requesting firmware 'bone_pwm_P8_34-00A0.dtbo' for board-name 'Override Board Name', version '00A0'
+[ 1749.601858] bone-capemgr bone_capemgr.9: slot #8: dtbo 'bone_pwm_P8_34-00A0.dtbo' loaded; converting to live tree
+[ 1749.602079] bone-capemgr bone_capemgr.9: slot #8: #2 overlays
+[ 1749.604951] bone-capemgr bone_capemgr.9: slot #8: Applied #2 overlays.
+bone_eqep1 not in /sys/devices/bone_capemgr.9/slots, loading it...
+dmesg before load:
+[ 1749.396055] bone-capemgr bone_capemgr.9: slot #7: Applied #8 overlays.
+[ 1749.601617] bone-capemgr bone_capemgr.9: part_number 'bone_pwm_P8_34', version 'N/A'
+[ 1749.601689] bone-capemgr bone_capemgr.9: slot #8: generic override
+[ 1749.601706] bone-capemgr bone_capemgr.9: bone: Using override eeprom data at slot 8
+[ 1749.601722] bone-capemgr bone_capemgr.9: slot #8: 'Override Board Name,00A0,Override Manuf,bone_pwm_P8_34'
+[ 1749.601821] bone-capemgr bone_capemgr.9: slot #8: Requesting part number/version based 'bone_pwm_P8_34-00A0.dtbo
+[ 1749.601837] bone-capemgr bone_capemgr.9: slot #8: Requesting firmware 'bone_pwm_P8_34-00A0.dtbo' for board-name 'Override Board Name', version '00A0'
+[ 1749.601858] bone-capemgr bone_capemgr.9: slot #8: dtbo 'bone_pwm_P8_34-00A0.dtbo' loaded; converting to live tree
+[ 1749.602079] bone-capemgr bone_capemgr.9: slot #8: #2 overlays
+[ 1749.604951] bone-capemgr bone_capemgr.9: slot #8: Applied #2 overlays.
+dmesg after load:
+[ 1749.604951] bone-capemgr bone_capemgr.9: slot #8: Applied #2 overlays.
+[ 1749.787484] bone-capemgr bone_capemgr.9: part_number 'bone_eqep1', version 'N/A'
+[ 1749.787559] bone-capemgr bone_capemgr.9: slot #9: generic override
+[ 1749.787577] bone-capemgr bone_capemgr.9: bone: Using override eeprom data at slot 9
+[ 1749.787593] bone-capemgr bone_capemgr.9: slot #9: 'Override Board Name,00A0,Override Manuf,bone_eqep1'
+[ 1749.787693] bone-capemgr bone_capemgr.9: slot #9: Requesting part number/version based 'bone_eqep1-00A0.dtbo
+[ 1749.787708] bone-capemgr bone_capemgr.9: slot #9: Requesting firmware 'bone_eqep1-00A0.dtbo' for board-name 'Override Board Name', version '00A0'
+[ 1749.787736] bone-capemgr bone_capemgr.9: slot #9: dtbo 'bone_eqep1-00A0.dtbo' loaded; converting to live tree
+[ 1749.787942] bone-capemgr bone_capemgr.9: slot #9: #3 overlays
+[ 1749.793220] bone-capemgr bone_capemgr.9: slot #9: Applied #3 overlays.
+/sys/class/gpio /home/debian/Beaglebone-motor-from-command-line
+Hm, GPIO 110 not loaded? I'll load it.
+Hm, GPIO 111 not loaded? I'll load it.
+Hm, GPIO 112 not loaded? I'll load it.
+/home/debian/Beaglebone-motor-from-command-line
+PWM path: /sys/devices/ocp.3/pwm_test_P8_34.12
+Found PWM path /sys/devices/ocp.3/pwm_test_P8_34.12 with contents:
+driver	duty  modalias	period	polarity  power  run  subsystem  uevent
+EQEP path: /sys/devices/ocp.3/48302000.epwmss/48302180.eqep
+Found EQEP path /sys/devices/ocp.3/48302000.epwmss/48302180.eqep with contents:
+driver	enabled  modalias  mode  period  position  power  subsystem  uevent
+Turning off PWM...
+Turning motor 100% PWM clockwise for a bit...
+EQEP before: 
+0
+Turning on in 1 sec...
+ON
+OFF
+EQEP after: 
+-53178
+Turning motor 100% PWM counter-clockwise for a bit...
+EQEP before: 
+-54131
+Turning on in 1 sec...
+OFF
+EQEP after: 
+-813
+Setting motor to standby...
+Verify motor doesn't turn.
+EQEP before: 
+236
+ON
+OFF
+EQEP after:
+236
+All done!
+2017-01-26 12:46:26 [root@beaglebone /home/debian/Beaglebone-motor-from-command-line] 
+# 
+2017-01-26 12:46:48 [root@beaglebone /home/debian/Beaglebone-motor-from-command-line] 
+# 
+2017-01-26 12:46:48 [root@beaglebone /home/debian/Beaglebone-motor-from-command-line] 
+# 
+2017-01-26 12:46:48 [root@beaglebone /home/debian/Beaglebone-motor-from-command-line] 
+# ./run-lil-dc-motor.sh 
+SLOTS is already set to '/sys/devices/bone_capemgr.9/slots', good.
+am33xx_pwm in /sys/devices/bone_capemgr.9/slots, good
+bone_pwm_P8_34 in /sys/devices/bone_capemgr.9/slots, good
+bone_eqep1 in /sys/devices/bone_capemgr.9/slots, good
+/sys/class/gpio /home/debian/Beaglebone-motor-from-command-line
+/home/debian/Beaglebone-motor-from-command-line
+PWM path: /sys/devices/ocp.3/pwm_test_P8_34.12
+Found PWM path /sys/devices/ocp.3/pwm_test_P8_34.12 with contents:
+driver	duty  modalias	period	polarity  power  run  subsystem  uevent
+EQEP path: /sys/devices/ocp.3/48302000.epwmss/48302180.eqep
+Found EQEP path /sys/devices/ocp.3/48302000.epwmss/48302180.eqep with contents:
+driver	enabled  modalias  mode  period  position  power  subsystem  uevent
+Turning off PWM...
+Turning motor 100% PWM clockwise for a bit...
+EQEP before: 
+0
+Turning on in 1 sec...
+ON
+OFF
+EQEP after: 
+-53863
+Turning motor 100% PWM counter-clockwise for a bit...
+EQEP before: 
+-54754
+Turning on in 1 sec...
+OFF
+EQEP after: 
+-1295
+Setting motor to standby...
+Verify motor doesn't turn.
+EQEP before: 
+-230
+ON
+OFF
+EQEP after:
+-230
+All done!
+2017-01-26 12:46:57 [root@beaglebone /home/debian/Beaglebone-motor-from-command-line] 
+# 
