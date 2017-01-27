@@ -74,33 +74,27 @@ done
 popd
 
 
-# Find PWM path
-pwm_path=$(find /sys/devices -iname "*pwm_test*")
-echo "PWM path: $pwm_path"
-if [ "$pwm_path" = "" ] 
-then
-    echo "No PWM path found! What's up?"
-    exit 1
-else
-    echo "Found PWM path $pwm_path with contents:"
-    ls $pwm_path
-fi
+# Find paths of the sysfs entries
+# $ for x in pwm_test eqep; do declare ${x}_path="/sys/devices/booger/${x}"; echo ${x}_path; done; echo $pwm_test_path
+# http://stackoverflow.com/questions/16553089/bash-dynamic-variable-names
+for x in pwm_test eqep
+do
+    # Find the path of the sysfs entry
+    mypath=$(find /sys/devices -iname "*$x*")
+    if [ "$mypath" = "" ] 
+    then
+        echo "No path found for $x! What's up?"
+        exit 1
+    else
+        echo "Found path for $x: $mypath with contents:"
+        ls $mypath
+    fi
+    # Save name of path
+    declare ${x}_path="${mypath}"   # pwm_test_path, eqep_path are now bash variables
+done
 
-# Find EQEP path
-eqep_path=$(find /sys/devices -iname "*eqep*")
-echo "EQEP path: $eqep_path"
-if [ "$eqep_path" = "" ]
-then
-    echo "No EQEP path found! What's up?"
-    exit 1
-else
-    echo "Found EQEP path $eqep_path with contents:"
-    ls $eqep_path
-fi
 echo 0 > $eqep_path/position
-
-
-cd $pwm_path
+cd $pwm_test_path
 
 echo "Turning off PWM..."
 echo 0 > run
